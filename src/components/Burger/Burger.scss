@@ -1,0 +1,218 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  width: 100%;
+  min-height: 100vh;
+  height: max-content;
+  padding-top: 100px;
+  background: linear-gradient(to right bottom, #21ef99, #af34df);
+  .totalSum {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    background-color: #e9e9f2;
+    z-index: 100000;
+    color: #2e1755;
+
+    span{
+      font-weight: bold;
+      color: #02047a;
+    }
+  }
+}
+
+.burgerContainer {
+  max-width: 1200px;
+  margin: 20px auto 0;
+  padding: 0 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  @media screen and (max-width: 700px){
+    max-width: 100% !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0 5px 40px;
+    .products{
+      padding: 10px 20px !important;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .products{
+      // width: 90vw !important;
+      margin: auto;
+      // padding: ;
+    }
+    .burger{
+      width: 100vw !important;
+      margin: auto;
+    }
+  }
+
+  .products {
+    padding: 10px 30px;
+    width: 300px;
+    height: max-content;
+    border-radius: 8px;
+    background-color: rgba($color: #222, $alpha: .2);
+    box-shadow: 0 0 25px #a7fe12;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .product {
+      padding: 5px 0;
+      h2{
+        text-transform: capitalize;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        span:first-child{
+          color: #151ceb;
+        }
+        span:last-child{
+          color: #2ce901;
+        }
+      }
+      .btnGroup{
+        margin-top: 8px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+
+        button{
+          width: 50%;
+          padding: 5px 10px;
+          border: none;
+          outline: none;
+          border-radius: 2px;
+          text-transform: uppercase;
+          font-size: 14px;
+          color: #f9f9f9;
+          background: linear-gradient(to right bottom, #07ffee, #6a12cf);
+          cursor: pointer;
+          transition: .2s;
+          &:hover{
+            box-shadow: 0 0 5px #07ffee, 0 0 8px #0171e9;
+          }
+          &:active{
+            transform: scale(.98);
+          }
+        }
+      }
+    }
+  }
+  .burger{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0;
+    .topBread{
+      width: 80%;
+      height: 80px;
+      margin-bottom: 5px;
+      padding-top: 10px;  
+      background: #c1a656;
+      border-radius: 50px 50px 8px 8px;
+      span{
+        display: inline-block;
+        width: 7px;
+        height: 3px;
+        background-color: #262b29;
+        border-radius: 50%;
+        position: relative;
+        &:first-child{
+          margin-left: 20%;
+          &::after, &::before{
+            content: ' ';
+            display: block;
+            width: 7px;
+            height: 3px;
+            border-radius: 50%;
+            background-color: #262b29;
+            position: absolute;
+            right: -30px;
+            bottom: -10px;
+          }
+          &::before{
+            right: -65px;
+            bottom: -5px;
+          }
+        }
+        &:last-child{
+          margin-left: 60%;
+          &::after, &::before{
+            content: ' ';
+            display: block;
+            width: 7px;
+            height: 3px;
+            border-radius: 50%;
+            background-color: #262b29;
+            position: absolute;
+            left: -30px;
+            top: 10px;
+          }
+          &::before{
+            left: -65px;
+            top: 5px;
+          }
+        }
+      }
+    }
+    .bottomBread{
+      width: 80%;
+      height: 80px;
+      background: #c1a656;
+      margin-top: 5px;
+      border-radius: 8px 8px 50px 50px;
+    }
+    .green{
+      width: 90%;
+      div{
+        width: 100%;
+        height: 10px;
+        background-color: #17d517;
+        border-radius: 10px;
+      }
+    }
+    .tomato{
+      width: 89%;
+      div{
+        width: 100%;
+        height: 15px;
+        background-color: #ec3521;
+        border-radius: 7px;
+      }
+    }
+    .cheese{
+      width: 90%;
+      div{
+        width: 100%;
+        height: 7px;
+        border-radius: 5px;
+        background-color: #ffda01;
+      }
+    }
+    .meat{
+      width: 86%;
+      div{
+        width: 100%;
+        height: 35px;
+        border-radius: 10px;
+        background: #a33815;
+      }
+    }
+  }
+}
